@@ -1,0 +1,19 @@
+% This m-file contains the state derivatives function for the solution
+% of a system of equations of motion using the matrix approach.  The
+% system is a double pendulum in the horizontal plane.
+
+function xdot = double_pendulum_function(t, x, m, R, L)
+
+% Calculate the M matrix for the current time step (note that M is a
+% function of the states, specifically x2, which is phi)
+M = [(2*R^2 + L^2 + 2*R*L*cos(x(2))) (L^2 + R*L*cos(x(2)));
+	(L^2 + R*L*cos(x(2))) L^2];
+
+% Calculate the F vector for the current time step
+F = [R*L*(2*x(3) + x(4))*x(4)*sin(x(2)); -R*L*x(3)^2*sin(x(2))];
+
+% Calculate the state derivatives using the matrix approach.  Note that
+% 'M\F' is another way of calculating 'inv(M)*F', but allows MATLAB to
+% select the most numerically efficient and accurate method for
+% calculating the inverse.
+xdot = [[zeros(2) eye(2)]*x; M\F]

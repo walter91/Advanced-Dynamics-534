@@ -1,0 +1,5 @@
+1.0*Ixx*Derivative(theta(t), t, t) - 1.0*Ixz*cos(theta(t))*Derivative(phi(t), t, t) - 1.0*Iyy*sin(theta(t))*cos(theta(t))*Derivative(phi(t), t)**2 + 1.0*Izz*sin(theta(t))*cos(theta(t))*Derivative(phi(t), t)**2 + g*h2*m2*sin(theta(t)) == Q1
+
+
+
+1.0*I1zz*Derivative(phi(t), t, t) + 1.0*Ixz*sin(theta(t))*Derivative(theta(t), t)**2 - 1.0*Ixz*cos(theta(t))*Derivative(theta(t), t, t) + 1.0*Iyy*sin(theta(t))**2*Derivative(phi(t), t, t) + 2.0*Iyy*sin(theta(t))*cos(theta(t))*Derivative(phi(t), t)*Derivative(theta(t), t) - 2.0*Izz*sin(theta(t))*cos(theta(t))*Derivative(phi(t), t)*Derivative(theta(t), t) + 1.0*Izz*cos(theta(t))**2*Derivative(phi(t), t, t) == Q2
